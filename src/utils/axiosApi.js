@@ -3,12 +3,12 @@ const axios = require('axios');
 
 const authLink = "https://www.strava.com/oauth/token"
 
-const activityUrl = "https://www.strava.com/api/v3/athlete/activities?access_token=4c6477652ccc403bc9dd08a5f6feb7ede47f56d1";
+const activityUrl = "https://www.strava.com/api/v3/athlete/activities?access_token=";
 
 
-export const getActivities = async () => {
+export const getActivities = async (refreshToken) => {
     try {
-        const response = await axios.get(activityUrl);
+        const response = await axios.get(`${activityUrl}${refreshToken}`);
         console.log(response);
         return response
       } catch (error) {
@@ -24,7 +24,7 @@ export const refreshAuth = () => {
         grant_type: "refresh_token",
       })
       .then(function (response) {
-        console.log(response);
+        getActivities(response.data.access_token)
       })
       .catch(function (error) {
         console.log(error);
