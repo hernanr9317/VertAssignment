@@ -10,7 +10,7 @@ export const AppRouter = () => {
 
       <Routes>
         <Route path="/" element={<ActivitiesScreen />} />
-        <Route path="/montlyStats" element={<MontlyStatsScreen />} />
+        <Route path="/montlystats" element={<MontlyStatsScreen />} />
 
         <Route path="*" element={<ActivitiesScreen />} />
       </Routes>
