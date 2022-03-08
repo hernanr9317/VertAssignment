@@ -11,7 +11,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { extendTheme } from '@chakra-ui/react'
+
 
 export const TableActivities = ({ activities, month, id }) => {
 
@@ -32,7 +32,7 @@ export const TableActivities = ({ activities, month, id }) => {
 
 
   return (
-    <Box overflowX="auto">
+    <Box overflowX="auto" className="tableBreak" >
       <Table variant="striped" colorScheme="teal">
         <TableCaption placement="top">
           <Text fontSize="xl">
@@ -40,36 +40,36 @@ export const TableActivities = ({ activities, month, id }) => {
           </Text>
         </TableCaption>
         <Thead>
-          <Tr>
-            <Th>Name</Th>
-            <Th>Date</Th>
-            <Th isNumeric>Distance</Th>
-            <Th isNumeric>Time (Seconds)</Th>
-            <Th isNumeric>Elevation gain</Th>
+          <Tr textAlign='center' w='15%'>
+            <Th textAlign='center' w='15%'>Name</Th>
+            <Th textAlign='center' w='15%'>Date</Th>
+            <Th textAlign='center' w='15%' isNumeric>Distance</Th>
+            <Th textAlign='center' w='15%' isNumeric>Time (Seconds)</Th>
+            <Th textAlign='center' w='15%' isNumeric>Elevation gain</Th>
           </Tr>
         </Thead>
 
         <Tbody>
           {activities?.map((activitie, index) => {
             return (
-              <Tr key={index}>
-                <Td>{activitie.name}</Td>
-                <Td>{activitie.start_date}</Td>
-                <Td isNumeric>{activitie.distance}</Td>
-                <Td isNumeric>{activitie.moving_time}</Td>
-                <Td isNumeric>{activitie.total_elevation_gain}</Td>
+              <Tr textAlign='center' w='15%' key={index}>
+                <Td textAlign='center' w='15%'>{activitie.name}</Td>
+                <Td textAlign='center' w='15%'>{activitie.start_date}</Td>
+                <Td textAlign='center' w='15%' isNumeric>{activitie.distance}</Td>
+                <Td textAlign='center' w='15%' isNumeric>{activitie.moving_time}</Td>
+                <Td textAlign='center' w='15%' isNumeric>{activitie.total_elevation_gain}</Td>
               </Tr>
             );
           })}
         </Tbody>
 
         <Tfoot>
-          <Tr>
-            <Th>Name</Th>
-            <Th>Date</Th>
-            <Th isNumeric>Distance</Th>
-            <Th isNumeric>Time (Seconds)</Th>
-            <Th isNumeric>Elevation gain</Th>
+          <Tr textAlign='center' w='15%'>
+            <Th textAlign='center' w='15%'>Name</Th>
+            <Th textAlign='center' w='15%'>Date</Th>
+            <Th textAlign='center' w='15%' isNumeric>Distance</Th>
+            <Th textAlign='center' w='15%' isNumeric>Time (Seconds)</Th>
+            <Th textAlign='center' w='15%' isNumeric>Elevation gain</Th>
           </Tr>
         </Tfoot>
       </Table>

@@ -44,7 +44,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <Container maxW='xl' centerContent>
+    <Container maxW='container.xl' centerContent>
       <TableActivities activities={actDetail} month={monthId} id={monthId}/>
     </Container>
   )
