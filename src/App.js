@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import './App.css';
-import { getActivities, refreshAuth } from './utils/axiosApi';
+import { getActivities } from './Redux/reducers/activitiesReducer';
 
-function App() {
+
+export const App = () => {
+
+  const dispatch = useDispatch();
 
 
   useEffect(() => {
 
-    // refreshAuth();
+      // dispatch(getActivities());
 
   }, [])
   
@@ -20,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+
