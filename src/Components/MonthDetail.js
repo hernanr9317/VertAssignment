@@ -4,6 +4,7 @@ import { mock } from "./mock";
 import { getMonth3, getMonth2, getMonth1, getActivities } from './../utils/helpers';
 import * as dayjs from "dayjs";
 import { useEffect, useState } from "react";
+import { Container } from "@chakra-ui/react";
 
 export const MonthDetail = () => {
 
@@ -43,9 +44,8 @@ useEffect(() => {
 }, [])
 
   return (
-    <>
-      
+    <Container maxW='xl' centerContent>
       <TableActivities activities={actDetail} month={monthId} id={monthId}/>
-    </>
+    </Container>
   )
 }

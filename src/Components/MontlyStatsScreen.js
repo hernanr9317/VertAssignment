@@ -1,6 +1,14 @@
 import { mock } from "./mock";
 import * as dayjs from "dayjs";
-import { SimpleGrid } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Container,
+  Flex,
+  SimpleGrid,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import { TableActivities } from "./TableActivities";
 import {
   getActivities,
@@ -22,10 +30,9 @@ export const MontlyStatsScreen = ({ activities = mock }) => {
 
   const activities1 = getActivities(activities, month1, month2);
 
-
   return (
     <>
-      <SimpleGrid minChildWidth="550px" spacing="40px">
+      {/* <SimpleGrid minChildWidth="550px" spacing="40px">
         <TableActivities
           activities={activities3}
           month={dayjs(activities3[0].start_date).month()}
@@ -43,7 +50,37 @@ export const MontlyStatsScreen = ({ activities = mock }) => {
           month={dayjs(activities1[0].start_date).month()}
           id={dayjs(activities1[0].start_date).month()}
         />
-      </SimpleGrid>
+      </SimpleGrid> */}
+
+      <Wrap spacing='20px' justify='center'>
+        <WrapItem>
+          <Center w="600px"  >
+          <TableActivities
+          activities={activities3}
+          month={dayjs(activities3[0].start_date).month()}
+          id={dayjs(activities3[0].start_date).month()}
+        />
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w="600px" >
+          <TableActivities
+          activities={activities2}
+          month={dayjs(activities2[0].start_date).month()}
+          id={dayjs(activities2[0].start_date).month()}
+        />
+          </Center>
+        </WrapItem>
+        <WrapItem>
+          <Center w="600px"  >
+          <TableActivities
+          activities={activities1}
+          month={dayjs(activities1[0].start_date).month()}
+          id={dayjs(activities1[0].start_date).month()}
+        />
+          </Center>
+        </WrapItem>
+      </Wrap>
     </>
   );
 };

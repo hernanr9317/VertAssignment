@@ -4,8 +4,8 @@ import { mock } from './mock';
 
 export const ActivitiesScreen = () => {
   return (
-    <>
+    <Container maxW='xl' centerContent>
       <TableActivities activities={mock}/>
-    </>
+    </Container>
   );
 };

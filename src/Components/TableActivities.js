@@ -8,8 +8,10 @@ import {
   Td,
   TableCaption,
   Text,
+  Box,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { extendTheme } from '@chakra-ui/react'
 
 export const TableActivities = ({ activities, month, id }) => {
 
@@ -30,8 +32,8 @@ export const TableActivities = ({ activities, month, id }) => {
 
 
   return (
-    <>
-      <Table variant="striped" colorScheme="teal" width="200px">
+    <Box overflowX="auto">
+      <Table variant="striped" colorScheme="teal">
         <TableCaption placement="top">
           <Text fontSize="xl">
             {month!==undefined ? <Link to={`/montlystats/${id}`}>Activities of {monthNames[month]}</Link> : "List of recent activities"}
@@ -71,6 +73,6 @@ export const TableActivities = ({ activities, month, id }) => {
           </Tr>
         </Tfoot>
       </Table>
-    </>
+    </Box>
   );
 };
