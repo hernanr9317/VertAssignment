@@ -9,13 +9,33 @@ import {
   TableCaption,
   Text,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-export const TableActivities = ({ activities, month }) => {
+export const TableActivities = ({ activities, month, id }) => {
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+
   return (
     <>
       <Table variant="striped" colorScheme="teal" width="200px">
         <TableCaption placement="top">
-          <Text fontSize="xl">{ month ? `Activities of ${month}` : "List of recent activities" }</Text>
+          <Text fontSize="xl">
+            {month!==undefined ? <Link to={`/montlystats/${id}`}>Activities of {monthNames[month]}</Link> : "List of recent activities"}
+          </Text>
         </TableCaption>
         <Thead>
           <Tr>
