@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
 import { getActivities } from './Redux/reducers/activitiesReducer';
+import { AppRouter } from './router/AppRoputer';
+
 
 
 export const App = () => {
@@ -16,11 +18,10 @@ export const App = () => {
   }, [])
   
 
-
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <AppRouter />
+    </>
   );
 }
 
