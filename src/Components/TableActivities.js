@@ -7,13 +7,16 @@ import {
   Th,
   Td,
   TableCaption,
+  Text,
 } from "@chakra-ui/react";
 
-export const TableActivities = ({ activities }) => {
+export const TableActivities = ({ activities, month }) => {
   return (
     <>
-      <Table variant="striped" colorScheme="teal">
-        <TableCaption>Imperial to metric conversion factors</TableCaption>
+      <Table variant="striped" colorScheme="teal" width="200px">
+        <TableCaption placement="top">
+          <Text fontSize="xl">{ month ? `Activities of ${month}` : "List of recent activities" }</Text>
+        </TableCaption>
         <Thead>
           <Tr>
             <Th>Name</Th>
@@ -25,7 +28,7 @@ export const TableActivities = ({ activities }) => {
         </Thead>
 
         <Tbody>
-          {activities.map((activitie, index) => {
+          {activities?.map((activitie, index) => {
             return (
               <Tr key={index}>
                 <Td>{activitie.name}</Td>
@@ -36,19 +39,15 @@ export const TableActivities = ({ activities }) => {
               </Tr>
             );
           })}
-
-          {/* <Tr>
-            <Td>inches</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
-          </Tr>  */}
         </Tbody>
 
         <Tfoot>
           <Tr>
-            <Th>To convert</Th>
-            <Th>into</Th>
-            <Th isNumeric>multiply by</Th>
+            <Th>Name</Th>
+            <Th>Date</Th>
+            <Th isNumeric>Distance</Th>
+            <Th isNumeric>Time (Seconds)</Th>
+            <Th isNumeric>Elevation gain</Th>
           </Tr>
         </Tfoot>
       </Table>

@@ -4,9 +4,8 @@ import { mock } from './mock';
 
 export const ActivitiesScreen = () => {
   return (
-    <Container>
-      <h1>Activities</h1>
+    <>
       <TableActivities activities={mock}/>
-    </Container>
+    </>
   );
 };
