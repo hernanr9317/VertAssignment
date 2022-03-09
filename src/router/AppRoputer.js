@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NavbarUi } from "../Components/NavbarUi";
+import { Routes, Route } from "react-router-dom";
 import { ActivitiesScreen } from "./../Components/ActivitiesScreen";
 import { MontlyStatsScreen } from "./../Components/MontlyStatsScreen";
 import { MonthDetail } from "./../Components/MonthDetail";
