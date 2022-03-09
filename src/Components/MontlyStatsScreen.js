@@ -1,13 +1,6 @@
-import { mock } from "./mock";
 import * as dayjs from "dayjs";
 import {
-  Box,
-  Center,
   Container,
-  Flex,
-  SimpleGrid,
-  Wrap,
-  WrapItem,
 } from "@chakra-ui/react";
 import { TableActivities } from "./TableActivities";
 import {
@@ -16,8 +9,15 @@ import {
   getMonth2,
   getMonth3,
 } from "../utils/helpers";
+import { useSelector } from "react-redux";
 
-export const MontlyStatsScreen = ({ activities = mock }) => {
+
+export const MontlyStatsScreen = () => {
+
+  const {data} = useSelector( state => state.activities );
+
+  const activities = data;
+
   const month3 = getMonth3();
 
   const month2 = getMonth2();
@@ -31,22 +31,22 @@ export const MontlyStatsScreen = ({ activities = mock }) => {
   const activities1 = getActivities(activities, month1, month2);
 
   return (
-    <Container maxW='container.lg'>
-          <TableActivities 
-          activities={activities3}
-          month={dayjs(activities3[0].start_date).month()}
-          id={dayjs(activities3[0].start_date).month()}
-        />
-          <TableActivities
-          activities={activities2}
-          month={dayjs(activities2[0].start_date).month()}
-          id={dayjs(activities2[0].start_date).month()}
-        />
-          <TableActivities
-          activities={activities1}
-          month={dayjs(activities1[0].start_date).month()}
-          id={dayjs(activities1[0].start_date).month()}
-        />
+    <Container maxW="container.lg">
+      <TableActivities
+        activities={activities3}
+        month={dayjs(activities3[0]?.start_date).month()}
+        id={dayjs(activities3[0]?.start_date).month()}
+      />
+      <TableActivities
+        activities={activities2}
+        month={dayjs(activities2[0]?.start_date).month()}
+        id={dayjs(activities2[0]?.start_date).month()}
+      />
+      <TableActivities
+        activities={activities1}
+        month={dayjs(activities1[0]?.start_date).month()}
+        id={dayjs(activities1[0]?.start_date).month()}
+      />
     </Container>
   );
 };

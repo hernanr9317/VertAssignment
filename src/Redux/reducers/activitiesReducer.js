@@ -14,7 +14,6 @@ export const getActivities = createAsyncThunk(
     try {
       const token = await refreshAuth();
       const response = await getActivitiesAxios(token);
-      console.log(response.data);
       return response.data;
     } catch (err) {
       throw new Error(err);

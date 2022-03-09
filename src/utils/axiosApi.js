@@ -22,7 +22,6 @@ export const refreshAuth = async () => {
 export const getActivitiesAxios = async (newToken) => {
   try {
     const response = await axios.get(`${activityUrl}${newToken}`);
-    console.log(response);
     return response;
   } catch (error) {
     console.error(error);
