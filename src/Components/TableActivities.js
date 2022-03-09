@@ -41,7 +41,7 @@ export const TableActivities = ({ activities, month, id }) => {
           <Text fontSize="xl">
             {month !== undefined ? (
               <Link to={`/montlystats/${id}`}>
-                Activities of {monthNames[month]}
+                 {monthNames[month]} Activities
               </Link>
             ) : (
               "List of recent activities"

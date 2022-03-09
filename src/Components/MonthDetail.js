@@ -5,6 +5,7 @@ import {
   getMonth2,
   getMonth1,
   getActivities,
+  getMiles,
 } from "./../utils/helpers";
 import * as dayjs from "dayjs";
 import { useEffect, useState } from "react";
