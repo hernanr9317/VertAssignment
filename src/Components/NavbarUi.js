@@ -7,12 +7,13 @@ import {
   Button,
   Menu,
   MenuButton,
+  Link as LinkChakra,
   useDisclosure,
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {ColorModeSwitch} from './ColorModeSwitch';
 
 const Links = [ 
@@ -25,22 +26,19 @@ const Links = [
 ];
 
 const NavLink = ({ children, href } ) => (
-  <Link
+  <LinkChakra as={Link}
     px={2}
     py={1}
     rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
     to={href}>
     {children}
-  </Link>
+  </LinkChakra>
 );
 
 export const NavbarUi = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}  style={{width: '100vw'}} >

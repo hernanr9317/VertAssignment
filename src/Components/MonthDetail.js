@@ -17,7 +17,7 @@ export const MonthDetail = () => {
     const month3 = getMonth3();
 
     const month2 = getMonth2();
-  
+     
   
 useEffect(() => {
 
