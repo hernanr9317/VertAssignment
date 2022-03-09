@@ -4,16 +4,13 @@ import {
   Avatar,
   HStack,
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
   Link as LinkChakra,
   useDisclosure,
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {ColorModeSwitch} from './ColorModeSwitch';
 
 const Links = [ 
@@ -37,8 +34,6 @@ const NavLink = ({ children, href } ) => (
 
 export const NavbarUi = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const location = useLocation();
-  console.log(location.pathname);
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}  style={{width: '100vw'}} >
@@ -52,6 +47,12 @@ export const NavbarUi = () => {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box>RUNAPP</Box>
+            <Avatar
+                  size={'sm'}
+                  src={
+                    'https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-runner-icon-png-image_4164742.jpg'
+                  }
+           />
             <HStack
               as={'nav'}
               spacing={4}
@@ -63,21 +64,6 @@ export const NavbarUi = () => {
           </HStack>
           <Flex alignItems={'center'}>
           <ColorModeSwitch />
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://vert.run/wp-content/uploads/2021/02/Vert.run-logos-whide.png'
-                  }
-                />
-              </MenuButton>
-            </Menu>
           </Flex>
         </Flex>
 
