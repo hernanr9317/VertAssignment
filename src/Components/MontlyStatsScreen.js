@@ -1,7 +1,5 @@
 import * as dayjs from "dayjs";
-import {
-  Container,
-} from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { TableActivities } from "./TableActivities";
 import {
   getActivities,
@@ -11,10 +9,8 @@ import {
 } from "../utils/helpers";
 import { useSelector } from "react-redux";
 
-
 export const MontlyStatsScreen = () => {
-
-  const {data} = useSelector( state => state.activities );
+  const { data } = useSelector((state) => state.activities);
 
   const activities = data;
 
@@ -31,7 +27,10 @@ export const MontlyStatsScreen = () => {
   const activities1 = getActivities(activities, month1, month2);
 
   return (
-    <Container maxW="container.lg">
+    <Container
+      maxW="container.lg"
+      className="animate__animated animate__fadeIn"
+    >
       <TableActivities
         activities={activities3}
         month={dayjs(activities3[0]?.start_date).month()}

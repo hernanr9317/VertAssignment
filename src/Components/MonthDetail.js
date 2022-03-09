@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 export const MonthDetail = () => {
   const { monthId } = useParams();
 
-  const {data} = useSelector( state => state.activities );
+  const { data } = useSelector((state) => state.activities);
 
   const activities = data;
 
@@ -47,7 +47,11 @@ export const MonthDetail = () => {
   }, [activities]);
 
   return (
-    <Container maxW="container.xl" centerContent>
+    <Container
+      maxW="container.xl"
+      centerContent
+      className="animate__animated animate__fadeIn"
+    >
       <TableActivities activities={actDetail} month={monthId} id={monthId} />
     </Container>
   );
